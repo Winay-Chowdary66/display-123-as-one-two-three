@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class Main{
+   public static void main(String[] args){
+       Scanner my_scanner = new Scanner(System.in);
+       String single_digits[] = {"zero", "one", "two", "three",
+ 					"four", "five", "six", "seven",
+ 					"eight", "nine"};
+ 		int number = my_scanner.nextInt();
+ 		int ones_digit = number%10;
+ 		int tens_digit = (number/10)%10;
+ 		int hundredth_digit = (number/100)%10;
+ 		int thousands_digit = (number/1000)%10;
+ 		String number_in_str = Integer.toString(number);
+ 		int number_in_str_len = number_in_str.length();
+ 		if(number_in_str_len == 1){
+ 		    System.out.println(single_digits[ones_digit]);
+ 		}
+ 		else if(number_in_str_len == 2){
+ 		    System.out.println(single_digits[tens_digit] + " " + single_digits[ones_digit]);
+ 		}
+ 		else if(number_in_str_len == 3){
+ 		    System.out.println(single_digits[hundredth_digit] + " " + single_digits[tens_digit]+ " "+ single_digits[ones_digit]);
+ 		}
+ 		else if(number_in_str_len == 4){
+ 		    System.out.println(single_digits[thousands_digit] + " " + single_digits[hundredth_digit] + " " + single_digits[tens_digit]+ " " + single_digits[ones_digit]);
+ 		}
+ 		else{
+ 		    System.out.printf("This Version cannot accepts %d digit numbers", number_in_str_len);
+ 		}
+    }
+}
+
+
+
+
+
